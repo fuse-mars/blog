@@ -1,0 +1,30 @@
+<div class="container" style="position: absolute; max-width: 100%; width: 100%; padding: 1em; ">
+
+<div class="row">
+    <p class="u-pull-left">
+      <a href="#/article/about" class="ember-view">Previous</a>
+    </p>
+
+    <p class="u-pull-right">
+      <a href="#/article/websockets" class="ember-view">Next</a>
+    </p>
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+<div class="twelve columns">
+
+{{#welcome-ui}}
+	{{!-- you claim that something is what it is, or give a fact, or a demo --}}
+	{{claim-ui content=validClaim}}
+
+	{{!-- then you provide supporting arguments, or provide where fact comes from, or provide step by step instrctions on how to produce the demo --}}
+	{{#defense-ui}}
+		{{validDefense}}
+	{{/defense-ui}}
+{{/welcome-ui}}
+</div>
+</div>
+</div>
+

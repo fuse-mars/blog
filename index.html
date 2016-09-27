@@ -1,26 +1,716 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title> DAILY - 06-09-2016 </title>
-    <meta name="description" content="Place for notating every tricky but userful thing i discover everyday">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
-    <base href="/blog/" />
-<meta name="daily-discoveries/config/environment" content="%7B%22modulePrefix%22%3A%22daily-discoveries%22%2C%22environment%22%3A%22production%22%2C%22baseURL%22%3A%22/blog/%22%2C%22locationType%22%3A%22auto%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%7D%2C%22disqus%22%3A%7B%22shortname%22%3A%22daily-discovery%22%7D%2C%22APP%22%3A%7B%22name%22%3A%22daily-discoveries%22%2C%22version%22%3A%220.0.0+5f2c6bc5%22%7D%2C%22ember-cli-mirage%22%3A%7B%22usingProxy%22%3Atrue%2C%22useDefaultPassthroughs%22%3Atrue%7D%2C%22exportApplicationGlobal%22%3Afalse%7D" />
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Latest Posts &#8211; My Way</title>
+<meta name="description" content="Describe this nonsense.">
+<meta name="keywords" content="Jekyll, theme, themes, responsive, blog, modern">
 
-    <link rel="stylesheet" href="assets/vendor-57af878e3fd9c27e41d03ea9a4d87ab4.css">
-    <link rel="stylesheet" href="assets/daily-discoveries-6d2d69140bb0918ccab6ce4ec6ab5447.css">
+
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Latest Posts">
+<meta property="og:description" content="Describe this nonsense.">
+<meta property="og:url" content="/">
+<meta property="og:site_name" content="My Way">
+
+
+
+
+
+<link rel="canonical" href="/">
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="My Way Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<!-- Webfonts -->
+<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic" rel="stylesheet" type="text/css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- Load Modernizr -->
+<script src="/assets/js/vendor/modernizr-2.6.2.custom.min.js"></script>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/apple-touch-icon-144x144-precomposed.png">
+
+
+
+</head>
+
+<body id="post-index" class="feature">
+
+<!--[if lt IE 9]><div class="upgrade"><strong><a href="http://whatbrowser.org/">Your browser is quite old!</strong> Why not upgrade to a different browser to better enjoy this site?</a></div><![endif]-->
+<nav id="dl-menu" class="dl-menuwrapper" role="navigation">
+	<button class="dl-trigger">Open Menu</button>
+	<ul class="dl-menu">
+		<li><a href="/">Home</a></li>
+		<li>
+			<a href="#">About</a>
+			<ul class="dl-submenu">
+				<li>
+					<img src="/images/avatar.jpg" alt="Marcellin Nshimiyimana photo" class="author-photo">
+					<h4>Marcellin Nshimiyimana</h4>
+					<p>Software engineer at Fusemachines</p>
+				</li>
+				<li><a href="/about/"><span class="btn btn-inverse">Learn More</span></a></li>
+				<li>
+					<a href="mailto:mars@fusemachines.com"><i class="fa fa-fw fa-envelope"></i> Email</a>
+				</li>
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			</ul><!-- /.dl-submenu -->
+		</li>
+		<li>
+			<a href="#">Posts</a>
+			<ul class="dl-submenu">
+				<li><a href="/posts/">All Posts</a></li>
+				<li><a href="/tags/">All Tags</a></li>
+			</ul>
+		</li>
+		
+	    
+	    <li><a href="/theme-setup/" >Theme Setup</a></li>
+	  
+	    
+	    <li><a href="http://mademistakes.com" target="_blank">External Link</a></li>
+	  
+	</ul><!-- /.dl-menu -->
+</nav><!-- /.dl-menuwrapper -->
+
+
+<div class="entry-header">
+  <div class="image-credit">Image source: <a href="http://www.dargadgetz.com/ios-7-abstract-wallpaper-pack-for-iphone-5-and-ipod-touch-retina/">dargadgetz</a></div><!-- /.image-credit -->
+  
+    <div class="entry-image">
+      <img src="/images/abstract-1.jpg" alt="Latest Posts">
+    </div><!-- /.entry-image -->
+  
+  <div class="header-title">
+    <div class="header-title-wrap">
+      <h1>My Way</h1>
+      <h2>Latest Posts</h2>
+    </div><!-- /.header-title-wrap -->
+  </div><!-- /.header-title -->
+</div><!-- /.entry-header -->
+
+<div id="main" role="main">
+  
+<article class="hentry">
+  <header>
+    
+    <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2016-09-27T00:00:00-04:00"><a href="/travis-ci-deploy-triggers/">September 27, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="/about/" title="About Marcellin Nshimiyimana">Marcellin Nshimiyimana</a></span></span>
+      
+      <span class="entry-reading-time">
+        <i class="fa fa-clock-o"></i>
+        
+Reading time ~1 minute
+      </span><!-- /.entry-reading-time -->
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="/travis-ci-deploy-triggers/" rel="bookmark" title="Travis-ci - deployment triggers" itemprop="url">Travis-ci - deployment triggers</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    <h3 id="description">Description</h3>
+<p>We need to deploy our Emberjs application when:</p>
+
+<ul>
+  <li>code is pushed/merged into <strong>deployment</strong> branch.</li>
+  <li>all acceptance tests succeed.</li>
+</ul>
+
+<h3 id="end-goal">End Goal</h3>
+
+<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">before_deploy</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">ember test -s -f 'Acceptance |'</span>
+<span class="s">deploy</span><span class="pi">:</span>
+  <span class="s">skip_cleanup</span><span class="pi">:</span> <span class="s">true</span>
+  <span class="s">provider</span><span class="pi">:</span> <span class="s">script</span>
+  <span class="s">script</span><span class="pi">:</span> <span class="s">ember deploy testing --verbose</span>
+  <span class="s">on</span><span class="pi">:</span>
+    <span class="s">branch</span><span class="pi">:</span> <span class="s">deployment</span>
+</code></pre>
+</div>
+
+<h3 id="step-by-step">Step by step</h3>
+
+<ul>
+  <li>Setup deployment trigger</li>
+</ul>
+
+<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">deploy</span><span class="pi">:</span>
+  <span class="s">on</span><span class="pi">:</span>
+    <span class="s">branch</span><span class="pi">:</span> <span class="s">deployment</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>Run the acceptance tests</li>
+</ul>
+
+<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">before_deploy</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">ember test -s -f 'Acceptance |'</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>Add the deployment command</li>
+</ul>
+
+<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">deploy</span><span class="pi">:</span>
+  <span class="s">provider</span><span class="pi">:</span> <span class="s">script</span>
+  <span class="s">script</span><span class="pi">:</span> <span class="s">ember deploy testing --verbose</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>Complete travis config file</li>
+</ul>
+
+<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="nn">---</span>
+<span class="s">language</span><span class="pi">:</span> <span class="s">node_js</span>
+<span class="s">node_js</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">4.5.0"</span>
+
+<span class="s">sudo</span><span class="pi">:</span> <span class="s">false</span>
+
+<span class="s">cache</span><span class="pi">:</span>
+  <span class="s">directories</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">node_modules</span>
+
+<span class="s">before_install</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">export PATH=/usr/local/phantomjs-2.0.0/bin:$PATH</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">npm</span><span class="nv"> </span><span class="s">config</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">spin</span><span class="nv"> </span><span class="s">false"</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">npm</span><span class="nv"> </span><span class="s">install</span><span class="nv"> </span><span class="s">-g</span><span class="nv"> </span><span class="s">npm@^2"</span>
+
+<span class="s">install</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">npm install -g bower</span>
+  <span class="pi">-</span> <span class="s">npm install</span>
+  <span class="pi">-</span> <span class="s">bower install</span>
+
+<span class="s">script</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">npm test</span>
+
+<span class="s">before_deploy</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">ember test -s -f 'Acceptance |'</span>
+<span class="s">deploy</span><span class="pi">:</span>
+  <span class="s">skip_cleanup</span><span class="pi">:</span> <span class="s">true</span>
+  <span class="s">provider</span><span class="pi">:</span> <span class="s">script</span>
+  <span class="s">script</span><span class="pi">:</span> <span class="s">ember deploy testing --verbose</span>
+  <span class="s">on</span><span class="pi">:</span>
+    <span class="s">branch</span><span class="pi">:</span> <span class="s">deployment</span>
+</code></pre>
+</div>
+
+<p>Now you can do this!</p>
+
+<h3 id="github-resources">GitHub resources:</h3>
+<ul>
+  <li><a href="http://nshimiye.com/tutorial-ember-cli-1.13.14/tests/?testId=6c41b476">Travis config file</a></li>
+</ul>
+
+<noscript><pre>404: Not Found
+</pre></noscript>
+<script src="https://gist.github.com/mmistakes/6589546.js"> </script>
+
+
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    
+    <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2016-09-27T00:00:00-04:00"><a href="/javascript-camelize/">September 27, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="/about/" title="About Marcellin Nshimiyimana">Marcellin Nshimiyimana</a></span></span>
+      
+      <span class="entry-reading-time">
+        <i class="fa fa-clock-o"></i>
+        
+Reading time ~1 minute
+      </span><!-- /.entry-reading-time -->
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="/javascript-camelize/" rel="bookmark" title="JavaScript - Camelize" itemprop="url">JavaScript - Camelize</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    <h3 id="description">Description</h3>
+<p>We want to join the word tokens of a phrase together, by capitalized each term’s first word.</p>
+
+<h3 id="end-goal">End Goal</h3>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">camelize</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">str</span>
+        <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\s(</span><span class="sr">.</span><span class="se">)</span><span class="sr">/g</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$1</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">$1</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span> <span class="p">})</span>
+        <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\s</span><span class="sr">/g</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\-(</span><span class="sr">.</span><span class="se">)</span><span class="sr">/g</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$1</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">$1</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span> <span class="p">})</span>
+        <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\-</span><span class="sr">/g</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^</span><span class="se">(</span><span class="sr">.</span><span class="se">)</span><span class="sr">/</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$1</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">$1</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span> <span class="p">});</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="step-by-step">Step by step</h3>
+
+<ul>
+  <li>Capitalize each first letter of the word that follows a space</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/s</span><span class="se">(</span><span class="sr">.</span><span class="se">)</span><span class="sr">/g</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$1</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">$1</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span> <span class="p">})</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>Remove all spaces</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\s</span><span class="sr">/g</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>Capitalize each first letter of the word that follows a dash</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\-(</span><span class="sr">.</span><span class="se">)</span><span class="sr">/g</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$1</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">$1</span><span class="p">.</span><span class="nx">toUpperCase</span><span class="p">();</span> <span class="p">})</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>Remove all dashes</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/</span><span class="se">\-</span><span class="sr">/g</span><span class="p">,</span> <span class="s1">''</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>Make sure the first is lowercased</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/^</span><span class="se">(</span><span class="sr">.</span><span class="se">)</span><span class="sr">/</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$1</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">$1</span><span class="p">.</span><span class="nx">toLowerCase</span><span class="p">();</span> <span class="p">});</span>
+</code></pre>
+</div>
+
+<p>Now you can do this!</p>
+
+<h3 id="resources">Resources:</h3>
+<ul>
+  <li><a href="http://www.definition-of.com/camelize">camelize</a></li>
+</ul>
+
+<h3 id="use-cases">use cases</h3>
+
+<ul>
+  <li>Turn user input into bot commands: <code class="highlighter-rouge">camelize(userInput) === systemCommand</code></li>
+</ul>
+
+<noscript><pre>404: Not Found
+</pre></noscript>
+<script src="https://gist.github.com/mmistakes/6589546.js"> </script>
+
+
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    
+    <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2016-09-26T00:00:00-04:00"><a href="/acceptance-testing-bh/">September 26, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="/about/" title="About Marcellin Nshimiyimana">Marcellin Nshimiyimana</a></span></span>
+      
+      <span class="entry-reading-time">
+        <i class="fa fa-clock-o"></i>
+        
+Reading time ~1 minute
+      </span><!-- /.entry-reading-time -->
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="/acceptance-testing-bh/" rel="bookmark" title="Acceptance testing - button hover" itemprop="url">Acceptance testing - button hover</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    <h3 id="description">Description</h3>
+<p>We have a search box, a text on top of it, and a question mark to provide useful info in case a user gets confused.</p>
+
+<p>The information is shown when the user hover over this <strong>question mark</strong></p>
+
+<h3 id="end-goal">End Goal</h3>
+<iframe width="500" height="300" src="//www.youtube.com/embed/SU3kYxJmWuQ" frameborder="0"></iframe>
+
+<h3 id="step-by-step">Step by step</h3>
+
+<ul>
+  <li>create the acceptance test</li>
+</ul>
+
+<div class="language-sh highlighter-rouge"><pre class="highlight"><code><span class="c"># terminal</span>
+ember g acceptance-test show-searchinput-tooltip-on-hover
+</code></pre>
+</div>
+
+<ul>
+  <li>writing the test logic:
+    <ul>
+      <li>go to search page</li>
+    </ul>
+
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">visit</span><span class="p">(</span><span class="s1">'/search'</span><span class="p">);</span>
+</code></pre>
+    </div>
+
+    <ul>
+      <li>make sure the question-mark icon exist</li>
+    </ul>
+
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">andThen</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">find</span><span class="p">(</span><span class="s1">'.full-name .info-icon'</span><span class="p">).</span><span class="nx">length</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s1">'name info icon exist'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+    </div>
+
+    <ul>
+      <li>hover over the “question-mark” icon in front of the Name input box</li>
+    </ul>
+
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">andThen</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">ic</span> <span class="o">=</span> <span class="nx">find</span><span class="p">(</span><span class="s1">'.full-name .info-icon'</span><span class="p">);</span>
+  <span class="nx">ic</span><span class="p">.</span><span class="nx">mouseenter</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre>
+    </div>
+
+    <ul>
+      <li>A message “Enter a partial or complete name” should show up</li>
+    </ul>
+
+    <div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nx">andThen</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">let</span> <span class="nx">messageBox</span> <span class="o">=</span> <span class="nx">find</span><span class="p">(</span><span class="s1">'.full-name .popover-content'</span><span class="p">);</span>
+  <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">messageBox</span><span class="p">.</span><span class="nx">text</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">search</span><span class="p">(</span><span class="nx">message</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s1">'helpful message is shown'</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre>
+    </div>
+  </li>
+  <li>Complete test</li>
+</ul>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kr">import</span> <span class="p">{</span> <span class="nx">test</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">'qunit'</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">moduleForAcceptance</span> <span class="nx">from</span>
+    <span class="s1">'app-test/tests/helpers/module-for-acceptance'</span><span class="p">;</span>
+
+<span class="nx">moduleForAcceptance</span><span class="p">(</span><span class="s1">'Acceptance | show searchinput tooltip on hover'</span><span class="p">);</span>
+
+<span class="nx">test</span><span class="p">(</span><span class="s1">'Hovering over the question-mark icon'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">assert</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">visit</span><span class="p">(</span><span class="s1">'/search'</span><span class="p">);</span>
+  <span class="kd">let</span> <span class="nx">searchRouteName</span> <span class="o">=</span> <span class="s1">'search'</span><span class="p">,</span>
+  <span class="nx">message</span> <span class="o">=</span> <span class="s1">'Enter a partial or complete name'</span><span class="p">;</span>
+
+  <span class="nx">andThen</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">currentRouteName</span><span class="p">(),</span> <span class="nx">searchRouteName</span><span class="p">,</span>
+                  <span class="s1">'search page reached'</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">find</span><span class="p">(</span><span class="s1">'.full-name .info-icon'</span><span class="p">).</span><span class="nx">length</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+                  <span class="s1">'name info icon exist'</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">andThen</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">ic</span> <span class="o">=</span> <span class="nx">find</span><span class="p">(</span><span class="s1">'.full-name .info-icon'</span><span class="p">);</span>
+    <span class="nx">ic</span><span class="p">.</span><span class="nx">mouseenter</span><span class="p">();</span>
+  <span class="p">});</span>
+
+  <span class="nx">andThen</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">messageBox</span> <span class="o">=</span> <span class="nx">find</span><span class="p">(</span><span class="s1">'.full-name .popover-content'</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">messageBox</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'popover box is present'</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">messageBox</span><span class="p">.</span><span class="nx">text</span><span class="p">().</span><span class="nx">trim</span><span class="p">().</span><span class="nx">search</span><span class="p">(</span><span class="nx">message</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="s1">'helpful message is shown'</span><span class="p">);</span>
+  <span class="p">});</span>
+
+  <span class="nx">andThen</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">ic</span> <span class="o">=</span> <span class="nx">find</span><span class="p">(</span><span class="s1">'.full-name .info-icon'</span><span class="p">);</span>
+    <span class="nx">ic</span><span class="p">.</span><span class="nx">mouseleave</span><span class="p">();</span>
+  <span class="p">});</span>
+
+  <span class="nx">andThen</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">messageBox</span> <span class="o">=</span> <span class="nx">find</span><span class="p">(</span><span class="s1">'.full-name .popover-content'</span><span class="p">);</span>
+    <span class="nx">assert</span><span class="p">.</span><span class="nx">equal</span><span class="p">(</span><span class="nx">messageBox</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'popover box is removed'</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+
+</code></pre>
+</div>
+
+<p>Now you can do this!</p>
+
+<h3 id="github-resources">GitHub resources:</h3>
+<ul>
+  <li><a href="https://fuse-mars.github.io/tutorial-ember-cli-1.13.14">Product</a></li>
+  <li><a href="http://nshimiye.com/tutorial-ember-cli-1.13.14/tests/?testId=6c41b476">Testing</a></li>
+</ul>
+
+<noscript><pre>404: Not Found
+</pre></noscript>
+<script src="https://gist.github.com/mmistakes/6589546.js"> </script>
+
+
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    
+    <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2013-10-26T00:00:00-04:00"><a href="/background-image/">October 26, 2013</a></time></span><span class="author vcard"><span class="fn"><a href="/about/" title="About Marcellin Nshimiyimana">Marcellin Nshimiyimana</a></span></span>
+      
+      <span class="entry-reading-time">
+        <i class="fa fa-clock-o"></i>
+        
+Reading time ~1 minute
+      </span><!-- /.entry-reading-time -->
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="/background-image/" rel="bookmark" title="Post with a Background Image" itemprop="url">Post with a Background Image</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    <p>Here be a sample post with a custom background image. To utilize this “feature” just add the following YAML to a post’s front matter.</p>
+
+<div class="language-yaml highlighter-rouge"><pre class="highlight"><code><span class="s">image</span><span class="pi">:</span>
+  <span class="s">background</span><span class="pi">:</span> <span class="s">filename.png</span>
+</code></pre>
+</div>
+
+<p>This little bit of YAML makes the assumption that your background image asset is in the <code class="highlighter-rouge">/images</code> folder. If you place it somewhere else or are hotlinking from the web, just include the full http(s):// URL. Either way you should have a background image that is tiled.</p>
+
+<p>If you want to set a background image for the entire site just add <code class="highlighter-rouge">background: filename.png</code> to your <code class="highlighter-rouge">_config.yml</code> and BOOM — background images on every page!</p>
+
+<div xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/" about="http://subtlepatterns.com" class="notice">Background images from <span property="dct:title">Subtle Patterns</span> (<a rel="cc:attributionURL" property="cc:attributionName" href="http://subtlepatterns.com">Subtle Patterns</a>) / <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></div>
+
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    
+      <div class="entry-image-index">
+        <a href="/code-highlighting-post/" title="Syntax Highlighting Post"><img src="/images/abstract-10.jpg" alt="Syntax Highlighting Post"></a>
+      </div><!-- /.entry-image -->
+    
+    <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2013-08-16T00:00:00-04:00"><a href="/code-highlighting-post/">August 16, 2013</a></time></span><span class="author vcard"><span class="fn"><a href="/about/" title="About Marcellin Nshimiyimana">Marcellin Nshimiyimana</a></span></span>
+      
+      <span class="entry-reading-time">
+        <i class="fa fa-clock-o"></i>
+        
+Reading time ~1 minute
+      </span><!-- /.entry-reading-time -->
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="/code-highlighting-post/" rel="bookmark" title="Syntax Highlighting Post" itemprop="url">Syntax Highlighting Post</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    <p>Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect the meaning of the text itself; it is intended only for human readers.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
+
+<h3 id="gfm-code-blocks">GFM Code Blocks</h3>
+
+<p>GitHub Flavored Markdown <a href="https://help.github.com/articles/creating-and-highlighting-code-blocks/">fenced code blocks</a> are supported. To modify styling and highlight colors edit <code class="highlighter-rouge">/_sass/syntax.scss</code>.</p>
+
+<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nf">#container</span> <span class="p">{</span>
+  <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">-240px</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.highlight</span> <span class="p">{</span>
+  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="nl">padding</span><span class="p">:</span> <span class="m">1em</span><span class="p">;</span>
+  <span class="nl">font-family</span><span class="p">:</span> <span class="nv">$monospace</span><span class="p">;</span>
+  <span class="nl">font-size</span><span class="p">:</span> <span class="nv">$type-size-7</span><span class="p">;</span>
+  <span class="nl">line-height</span><span class="p">:</span> <span class="m">1</span><span class="mi">.8</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"pagination"</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
+  {% if page.previous %}
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.url }}{{ page.previous.url }}"</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">title=</span><span class="s">"{{ page.previous.title }}"</span><span class="nt">&gt;</span>Previous article<span class="nt">&lt;/a&gt;</span>
+  {% endif %}
+  {% if page.next %}
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.url }}{{ page.next.url }}"</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">title=</span><span class="s">"{{ page.next.title }}"</span><span class="nt">&gt;</span>Next article<span class="nt">&lt;/a&gt;</span>
+  {% endif %}
+<span class="nt">&lt;/nav&gt;</span><span class="c">&lt;!-- /.pagination --&gt;</span>
+</code></pre>
+</div>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8</pre></td><td class="code"><pre><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"pagination"</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
+  {% if page.previous %}
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.url }}{{ page.previous.url }}"</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">title=</span><span class="s">"{{ page.previous.title }}"</span><span class="nt">&gt;</span>Previous article<span class="nt">&lt;/a&gt;</span>
+  {% endif %}
+  {% if page.next %}
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.url }}{{ page.next.url }}"</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">title=</span><span class="s">"{{ page.next.title }}"</span><span class="nt">&gt;</span>Next article<span class="nt">&lt;/a&gt;</span>
+  {% endif %}
+<span class="nt">&lt;/nav&gt;</span><span class="c">&lt;!-- /.pagination --&gt;</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></figure>
+
+<div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Jekyll</span>
+  <span class="k">class</span> <span class="nc">TagIndex</span> <span class="o">&lt;</span> <span class="no">Page</span>
+    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">dir</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
+      <span class="vi">@site</span> <span class="o">=</span> <span class="n">site</span>
+      <span class="vi">@base</span> <span class="o">=</span> <span class="n">base</span>
+      <span class="vi">@dir</span> <span class="o">=</span> <span class="n">dir</span>
+      <span class="vi">@name</span> <span class="o">=</span> <span class="s1">'index.html'</span>
+      <span class="nb">self</span><span class="p">.</span><span class="nf">process</span><span class="p">(</span><span class="vi">@name</span><span class="p">)</span>
+      <span class="nb">self</span><span class="p">.</span><span class="nf">read_yaml</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="s1">'_layouts'</span><span class="p">),</span> <span class="s1">'tag_index.html'</span><span class="p">)</span>
+      <span class="nb">self</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s1">'tag'</span><span class="p">]</span> <span class="o">=</span> <span class="n">tag</span>
+      <span class="n">tag_title_prefix</span> <span class="o">=</span> <span class="n">site</span><span class="p">.</span><span class="nf">config</span><span class="p">[</span><span class="s1">'tag_title_prefix'</span><span class="p">]</span> <span class="o">||</span> <span class="s1">'Tagged: '</span>
+      <span class="n">tag_title_suffix</span> <span class="o">=</span> <span class="n">site</span><span class="p">.</span><span class="nf">config</span><span class="p">[</span><span class="s1">'tag_title_suffix'</span><span class="p">]</span> <span class="o">||</span> <span class="s1">'&amp;#8211;'</span>
+      <span class="nb">self</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">tag_title_prefix</span><span class="si">}#{</span><span class="n">tag</span><span class="si">}</span><span class="s2">"</span>
+      <span class="nb">self</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s1">'description'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"An archive of posts tagged </span><span class="si">#{</span><span class="n">tag</span><span class="si">}</span><span class="s2">."</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+
+<h3 id="code-blocks-in-lists">Code Blocks in Lists</h3>
+
+<p>Indentation matters. Be sure the indent of the code block aligns with the first non-space character after the list item marker (e.g., <code class="highlighter-rouge">1.</code>). Usually this will mean indenting 3 spaces instead of 4.</p>
+
+<ol>
+  <li>Do step 1.</li>
+  <li>
+    <p>Now do this:</p>
+
+    <div class="language-ruby highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
+<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span>
+</code></pre>
+    </div>
+  </li>
+  <li>Now you can do this.</li>
+</ol>
+
+<h3 id="github-gist-embed">GitHub Gist Embed</h3>
+
+<p>An example of a Gist embed below.</p>
+
+<noscript><pre>404: Not Found
+</pre></noscript>
+<script src="https://gist.github.com/mmistakes/6589546.js"> </script>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p><a href="http://en.wikipedia.org/wiki/Syntax_highlighting">http://en.wikipedia.org/wiki/Syntax_highlighting</a> <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+
+
+<div class="pagination">
+  <ul class="inline-list">
+    
+    
 
     
-  </head>
-  <body>
+    
+      <li><strong class="current-page">1</strong></li>
     
 
-    <script src="assets/vendor-776005a115fcbbd9241a0d9b1f1ead4e.js"></script>
-    <script src="assets/daily-discoveries-08af173676dd9d3c8e44061143e18c1f.js"></script>
+    
+    
 
     
-  </body>
+    
+    
+
+    
+      
+        
+        
+        
+        <li><a href="/page2/">2</a></li>
+      
+    
+
+    
+    
+
+    
+      <li><a href="/page3/">3</a></li>
+    
+
+    
+    
+      <li><a href="/page2/" class="btn">Next</a></li>
+    
+  </ul>
+</div>
+
+</div><!-- /#main -->
+
+<div class="footer-wrapper">
+  <footer role="contentinfo">
+    <span>&copy; 2016 Marcellin Nshimiyimana. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/hpstr-jekyll-theme/" rel="nofollow">HPSTR Theme</a>.</span>
+  </footer>
+</div><!-- /.footer-wrapper -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="/assets/js/scripts.min.js"></script>
+
+
+
+          
+
+</body>
 </html>

@@ -1,4 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/blog/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="/blog/" rel="alternate" type="text/html" /><updated>2016-09-28T18:35:44-04:00</updated><id>/blog/</id><title type="html">My Way</title><subtitle>Just one of many ways to achieve a goal!</subtitle><entry><title type="html">Travis-ci - deployment triggers</title><link href="/blog/travis-ci-deploy-triggers/" rel="alternate" type="text/html" title="Travis-ci - deployment triggers" /><published>2016-09-27T00:00:00-04:00</published><updated>2016-09-27T00:00:00-04:00</updated><id>/blog/travis-ci-deploy-triggers</id><content type="html" xml:base="/blog/travis-ci-deploy-triggers/">&lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/blog/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="/blog/" rel="alternate" type="text/html" /><updated>2016-09-29T15:35:15-04:00</updated><id>/blog/</id><title type="html">My Way</title><subtitle>Just one of many ways to achieve a goal!</subtitle><entry><title type="html">Travis-ci - Send notification with custom message</title><link href="/blog/travis-ci-notification-custom-message/" rel="alternate" type="text/html" title="Travis-ci - Send notification with custom message" /><published>2016-09-29T00:00:00-04:00</published><updated>2016-09-29T00:00:00-04:00</updated><id>/blog/travis-ci-notification-custom-message</id><content type="html" xml:base="/blog/travis-ci-notification-custom-message/">&lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
+&lt;p&gt;We need to send email (with custom email) from travis to specified users when the build fails.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;NOTE: As of now, Travis-ci does not allow custom messages for email notification.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;end-goal&quot;&gt;End Goal&lt;/h3&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;notifications&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;on_success&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;never&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;on_failure&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;always&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;recipients&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;email1@domain.com&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;email2@domain.com&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;step-by-step&quot;&gt;Step by step&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Specify when to send email - only when build/test failed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;on_success&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;never&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# do not send anything if build succeeds&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;on_failure&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;always&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# if there is a fail&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# other options are [always|never|change]&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Specify email addresses&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;recipients&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;email1@domain.com&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;email2@domain.com&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Complete travis config file&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;node_js&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;node_js&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;4.5.0&quot;&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;false&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;notifications&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;email&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;on_success&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;change&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# only if status change from fail to success&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;on_failure&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;always&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# if there is a fail&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;recipients&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;email1@domain.com&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;email2@domain.com&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;cache&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;directories&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;node_modules&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;before_install&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;export PATH=/usr/local/phantomjs-2.0.0/bin:$PATH&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;npm&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;config&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;spin&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;false&quot;&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;npm&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;-g&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;npm@^2&quot;&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;install&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;npm install -g bower&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;npm install&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bower install&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ember test&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;before_deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ember test -f 'Acceptance |'&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;skip_cleanup&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ember deploy testing --verbose&lt;/span&gt;
+  &lt;span class=&quot;s&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;deployment&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now you can do this!&lt;/p&gt;
+
+&lt;h3 id=&quot;github-resources&quot;&gt;GitHub resources:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.travis-ci.com/user/notifications#Email-notifications&quot;&gt;Travis documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><category term="travis-ci" /><category term="email notification" /><category term="continuous deployment" /><summary type="html">Description
+We need to send email (with custom email) from travis to specified users when the build fails.</summary></entry><entry><title type="html">Travis-ci - deployment triggers</title><link href="/blog/travis-ci-deploy-triggers/" rel="alternate" type="text/html" title="Travis-ci - deployment triggers" /><published>2016-09-27T00:00:00-04:00</published><updated>2016-09-27T00:00:00-04:00</updated><id>/blog/travis-ci-deploy-triggers</id><content type="html" xml:base="/blog/travis-ci-deploy-triggers/">&lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
 &lt;p&gt;We need to deploy our Emberjs application when:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -96,9 +189,8 @@
   &lt;li&gt;&lt;a href=&quot;http://nshimiye.com/tutorial-ember-cli-1.13.14/tests/?testId=6c41b476&quot;&gt;Travis config file&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;noscript&gt;&lt;pre&gt;404: Not Found
-&lt;/pre&gt;&lt;/noscript&gt;
-&lt;script src=&quot;https://gist.github.com/mmistakes/6589546.js&quot;&gt; &lt;/script&gt;</content><category term="ember-cli@v1.13.14" /><category term="emberjs" /><category term="ember-cli-deploy" /><category term="github pages" /><category term="travis-ci" /><category term="triggers" /><category term="continuous deployment" /><summary type="html">Description
+&lt;!-- &lt;noscript&gt;&lt;pre&gt;404: Not Found
+&lt;/pre&gt;&lt;/noscript&gt;&lt;script src=&quot;https://gist.github.com/mmistakes/6589546.js&quot;&gt; &lt;/script&gt; --&gt;</content><category term="ember-cli@v1.13.14" /><category term="emberjs" /><category term="ember-cli-deploy" /><category term="github pages" /><category term="travis-ci" /><category term="triggers" /><category term="continuous deployment" /><summary type="html">Description
 We need to deploy our Emberjs application when:</summary></entry><entry><title type="html">JavaScript - Camelize</title><link href="/blog/javascript-camelize/" rel="alternate" type="text/html" title="JavaScript - Camelize" /><published>2016-09-27T00:00:00-04:00</published><updated>2016-09-27T00:00:00-04:00</updated><id>/blog/javascript-camelize</id><content type="html" xml:base="/blog/javascript-camelize/">&lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
 &lt;p&gt;We want to join the word tokens of a phrase together, by capitalized each term’s first word.&lt;/p&gt;
 
@@ -170,9 +262,8 @@ We need to deploy our Emberjs application when:</summary></entry><entry><title t
   &lt;li&gt;Turn user input into bot commands: &lt;code class=&quot;highlighter-rouge&quot;&gt;camelize(userInput) === systemCommand&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;noscript&gt;&lt;pre&gt;404: Not Found
-&lt;/pre&gt;&lt;/noscript&gt;
-&lt;script src=&quot;https://gist.github.com/mmistakes/6589546.js&quot;&gt; &lt;/script&gt;</content><category term="JavaScript" /><category term="function" /><summary type="html">Description
+&lt;!-- &lt;noscript&gt;&lt;pre&gt;404: Not Found
+&lt;/pre&gt;&lt;/noscript&gt;&lt;script src=&quot;https://gist.github.com/mmistakes/6589546.js&quot;&gt; &lt;/script&gt; --&gt;</content><category term="JavaScript" /><category term="function" /><summary type="html">Description
 We want to join the word tokens of a phrase together, by capitalized each term’s first word.</summary></entry><entry><title type="html">Acceptance testing - button hover</title><link href="/blog/acceptance-testing-bh/" rel="alternate" type="text/html" title="Acceptance testing - button hover" /><published>2016-09-26T00:00:00-04:00</published><updated>2016-09-26T00:00:00-04:00</updated><id>/blog/acceptance-testing-bh</id><content type="html" xml:base="/blog/acceptance-testing-bh/">&lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
 &lt;p&gt;We have a search box, a text on top of it, and a question mark to provide useful info in case a user gets confused.&lt;/p&gt;
 
@@ -291,7 +382,6 @@ ember g acceptance-test show-searchinput-tooltip-on-hover
   &lt;li&gt;&lt;a href=&quot;http://nshimiye.com/tutorial-ember-cli-1.13.14/tests/?testId=6c41b476&quot;&gt;Testing&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;noscript&gt;&lt;pre&gt;404: Not Found
-&lt;/pre&gt;&lt;/noscript&gt;
-&lt;script src=&quot;https://gist.github.com/mmistakes/6589546.js&quot;&gt; &lt;/script&gt;</content><category term="ember-cli@v1.13.14" /><category term="emberjs" /><category term="JavaScript" /><category term="acceptance testing" /><summary type="html">Description
+&lt;!-- &lt;noscript&gt;&lt;pre&gt;404: Not Found
+&lt;/pre&gt;&lt;/noscript&gt;&lt;script src=&quot;https://gist.github.com/mmistakes/6589546.js&quot;&gt; &lt;/script&gt; --&gt;</content><category term="ember-cli@v1.13.14" /><category term="emberjs" /><category term="JavaScript" /><category term="acceptance testing" /><summary type="html">Description
 We have a search box, a text on top of it, and a question mark to provide useful info in case a user gets confused.</summary></entry></feed>

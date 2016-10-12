@@ -128,6 +128,121 @@
   <header>
     
     <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2016-09-29T00:00:00-04:00"><a href="/blog/travis-ci-notification-custom-message/">September 29, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="/blog/about/" title="About Marcellin Nshimiyimana">Marcellin Nshimiyimana</a></span></span>
+      
+      <span class="entry-reading-time">
+        <i class="fa fa-clock-o"></i>
+        
+Reading time ~1 minute
+      </span><!-- /.entry-reading-time -->
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="/blog/travis-ci-notification-custom-message/" rel="bookmark" title="Travis-ci - Send notification with custom message" itemprop="url">Travis-ci - Send notification with custom message</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    <h3 id="description">Description</h3>
+<p>We need to send email (with custom email) from travis to specified users when the build fails.</p>
+
+<ul>
+  <li>NOTE: As of now, Travis-ci does not allow custom messages for email notification.</li>
+</ul>
+
+<h3 id="end-goal">End Goal</h3>
+
+<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">notifications</span><span class="pi">:</span>
+  <span class="s">email</span><span class="pi">:</span>
+    <span class="s">on_success</span><span class="pi">:</span> <span class="s">never</span>
+    <span class="s">on_failure</span><span class="pi">:</span> <span class="s">always</span>
+    <span class="s">recipients</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">email1@domain.com</span>
+      <span class="pi">-</span> <span class="s">email2@domain.com</span>
+</code></pre>
+</div>
+
+<h3 id="step-by-step">Step by step</h3>
+
+<ul>
+  <li>Specify when to send email - only when build/test failed</li>
+</ul>
+
+<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">on_success</span><span class="pi">:</span> <span class="s">never</span> <span class="c1"># do not send anything if build succeeds</span>
+<span class="s">on_failure</span><span class="pi">:</span> <span class="s">always</span> <span class="c1"># if there is a fail</span>
+<span class="c1"># other options are [always|never|change]</span>
+</code></pre>
+</div>
+<ul>
+  <li>Specify email addresses</li>
+</ul>
+
+<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="s">recipients</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">email1@domain.com</span>
+  <span class="pi">-</span> <span class="s">email2@domain.com</span>
+</code></pre>
+</div>
+
+<ul>
+  <li>Complete travis config file</li>
+</ul>
+
+<div class="language-yml highlighter-rouge"><pre class="highlight"><code><span class="nn">---</span>
+<span class="s">language</span><span class="pi">:</span> <span class="s">node_js</span>
+<span class="s">node_js</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">4.5.0"</span>
+
+<span class="s">sudo</span><span class="pi">:</span> <span class="s">false</span>
+
+<span class="s">notifications</span><span class="pi">:</span>
+  <span class="s">email</span><span class="pi">:</span>
+    <span class="s">on_success</span><span class="pi">:</span> <span class="s">change</span> <span class="c1"># only if status change from fail to success</span>
+    <span class="s">on_failure</span><span class="pi">:</span> <span class="s">always</span> <span class="c1"># if there is a fail</span>
+    <span class="s">recipients</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">email1@domain.com</span>
+      <span class="pi">-</span> <span class="s">email2@domain.com</span>
+
+<span class="s">cache</span><span class="pi">:</span>
+  <span class="s">directories</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">node_modules</span>
+
+<span class="s">before_install</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">export PATH=/usr/local/phantomjs-2.0.0/bin:$PATH</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">npm</span><span class="nv"> </span><span class="s">config</span><span class="nv"> </span><span class="s">set</span><span class="nv"> </span><span class="s">spin</span><span class="nv"> </span><span class="s">false"</span>
+  <span class="pi">-</span> <span class="s2">"</span><span class="s">npm</span><span class="nv"> </span><span class="s">install</span><span class="nv"> </span><span class="s">-g</span><span class="nv"> </span><span class="s">npm@^2"</span>
+
+<span class="s">install</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">npm install -g bower</span>
+  <span class="pi">-</span> <span class="s">npm install</span>
+  <span class="pi">-</span> <span class="s">bower install</span>
+
+<span class="s">script</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">ember test</span>
+
+<span class="s">before_deploy</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">ember test -f 'Acceptance |'</span>
+<span class="s">deploy</span><span class="pi">:</span>
+  <span class="s">skip_cleanup</span><span class="pi">:</span> <span class="s">true</span>
+  <span class="s">provider</span><span class="pi">:</span> <span class="s">script</span>
+  <span class="s">script</span><span class="pi">:</span> <span class="s">ember deploy testing --verbose</span>
+  <span class="s">on</span><span class="pi">:</span>
+    <span class="s">branch</span><span class="pi">:</span> <span class="s">deployment</span>
+</code></pre>
+</div>
+
+<p>Now you can do this!</p>
+
+<h3 id="github-resources">GitHub resources:</h3>
+<ul>
+  <li><a href="https://docs.travis-ci.com/user/notifications#Email-notifications">Travis documentation</a></li>
+</ul>
+
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    
+    <div class="entry-meta">
       <span class="entry-date date published updated"><time datetime="2016-09-27T00:00:00-04:00"><a href="/blog/travis-ci-deploy-triggers/">September 27, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="/blog/about/" title="About Marcellin Nshimiyimana">Marcellin Nshimiyimana</a></span></span>
       
       <span class="entry-reading-time">
@@ -240,10 +355,8 @@ Reading time ~1 minute
   <li><a href="http://nshimiye.com/tutorial-ember-cli-1.13.14/tests/?testId=6c41b476">Travis config file</a></li>
 </ul>
 
-<noscript><pre>404: Not Found
-</pre></noscript>
-<script src="https://gist.github.com/mmistakes/6589546.js"> </script>
-
+<!-- <noscript><pre>404: Not Found
+</pre></noscript><script src="https://gist.github.com/mmistakes/6589546.js"> </script> -->
 
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
@@ -337,10 +450,8 @@ Reading time ~1 minute
   <li>Turn user input into bot commands: <code class="highlighter-rouge">camelize(userInput) === systemCommand</code></li>
 </ul>
 
-<noscript><pre>404: Not Found
-</pre></noscript>
-<script src="https://gist.github.com/mmistakes/6589546.js"> </script>
-
+<!-- <noscript><pre>404: Not Found
+</pre></noscript><script src="https://gist.github.com/mmistakes/6589546.js"> </script> -->
 
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
@@ -481,10 +592,8 @@ ember g acceptance-test show-searchinput-tooltip-on-hover
   <li><a href="http://nshimiye.com/tutorial-ember-cli-1.13.14/tests/?testId=6c41b476">Testing</a></li>
 </ul>
 
-<noscript><pre>404: Not Found
-</pre></noscript>
-<script src="https://gist.github.com/mmistakes/6589546.js"> </script>
-
+<!-- <noscript><pre>404: Not Found
+</pre></noscript><script src="https://gist.github.com/mmistakes/6589546.js"> </script> -->
 
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->

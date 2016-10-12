@@ -1,4 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/blog/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="/blog/" rel="alternate" type="text/html" /><updated>2016-09-29T15:35:15-04:00</updated><id>/blog/</id><title type="html">My Way</title><subtitle>Just one of many ways to achieve a goal!</subtitle><entry><title type="html">Travis-ci - Send notification with custom message</title><link href="/blog/travis-ci-notification-custom-message/" rel="alternate" type="text/html" title="Travis-ci - Send notification with custom message" /><published>2016-09-29T00:00:00-04:00</published><updated>2016-09-29T00:00:00-04:00</updated><id>/blog/travis-ci-notification-custom-message</id><content type="html" xml:base="/blog/travis-ci-notification-custom-message/">&lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="/blog/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="/blog/" rel="alternate" type="text/html" /><updated>2016-10-12T01:41:07-04:00</updated><id>/blog//</id><title type="html">My Way</title><subtitle>Just one of many ways to achieve a goal!</subtitle><entry><title type="html">App Deployment - deploy different index files</title><link href="/blog/app-deployment-different-files/" rel="alternate" type="text/html" title="App Deployment - deploy different index files" /><published>2016-10-11T00:00:00-04:00</published><updated>2016-10-11T00:00:00-04:00</updated><id>/blog/app-deployment-different-files</id><content type="html" xml:base="/blog/app-deployment-different-files/">&lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
+&lt;p&gt;We want to deploy an Ember app that uses google analytics tracking script.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Enable it for production deployments&lt;/li&gt;
+  &lt;li&gt;Disable it during development&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;end-goal&quot;&gt;End Goal&lt;/h3&gt;
+&lt;iframe width=&quot;700&quot; height=&quot;150&quot; src=&quot;//nshimiye.com/tutorial-ember-cli-1.13.14/#/knowledge/whois&quot;&gt;&lt;/iframe&gt;
+
+&lt;h3 id=&quot;step-by-step&quot;&gt;Step by step&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a production deployment folder&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-sh highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkdir -p .deployment/production 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Add the custom index file that contains Google analytics script&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;// .deployment/production/index.html
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/javascript&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ga&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ga&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ga&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ga&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;||&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;arguments&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)};&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ga&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;ga&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'create'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'UA-XXXXX-Y'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'auto'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;ga&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'send'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'pageview'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;async&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'https://www.google-analytics.com/analytics.js'&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Make sure Google analytics tracks all pages&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// .deployment/production/router.js&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reopen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;notifyGoogleAnalytics&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ga&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'send'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'pageview'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;'page'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'url'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;'title'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'url'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'didTransition'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Add deployment commands in travis configuration file
+    &lt;ul&gt;
+      &lt;li&gt;copy index file&lt;/li&gt;
+      &lt;li&gt;add google analytics code to the Router&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;before_deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;cp -rf .deployment/production/index.html app/&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# append content of &quot;.deployment/production/router.js&quot; to &quot;app/router.js&quot;&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;cat app/router.js &amp;gt; app/router.tmp.js&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;cat app/router.tmp.js .deployment/production/router.js &amp;gt; app/router.js&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Now if you &lt;strong&gt;deploy&lt;/strong&gt; your app using travis, it will have google analytics enabled,
+but when you run it &lt;strong&gt;locally&lt;/strong&gt;, you wonâ€™t have to worry about messing up your analytics data!&lt;/p&gt;
+
+&lt;h3 id=&quot;github-resources&quot;&gt;GitHub resources:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://developers.google.com/analytics/devguides/collection/analyticsjs/&quot;&gt;Google analytics&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://guides.emberjs.com/v1.10.0/cookbook/helpers_and_components/adding_google_analytics_tracking/&quot;&gt;Google analytics in Emberjs app&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://fuse-mars.github.io/tutorial-ember-cli-1.13.14&quot;&gt;Code for the Example App&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- &lt;noscript&gt;&lt;pre&gt;404: Not Found
+&lt;/pre&gt;&lt;/noscript&gt;&lt;script src=&quot;https://gist.github.com/mmistakes/6589546.js&quot;&gt; &lt;/script&gt; --&gt;</content><category term="ember-cli@v1.13.14" /><category term="emberjs" /><category term="embere-cli-deloy" /><category term="deployment" /><category term="Google analytics" /><category term="configuration" /><category term="travis-ci" /><summary type="html">Description
+We want to deploy an Ember app that uses google analytics tracking script.</summary></entry><entry><title type="html">Travis-ci - Send notification with custom message</title><link href="/blog/travis-ci-notification-custom-message/" rel="alternate" type="text/html" title="Travis-ci - Send notification with custom message" /><published>2016-09-29T00:00:00-04:00</published><updated>2016-09-29T00:00:00-04:00</updated><id>/blog/travis-ci-notification-custom-message</id><content type="html" xml:base="/blog/travis-ci-notification-custom-message/">&lt;h3 id=&quot;description&quot;&gt;Description&lt;/h3&gt;
 &lt;p&gt;We need to send email (with custom email) from travis to specified users when the build fails.&lt;/p&gt;
 
 &lt;ul&gt;
@@ -270,8 +350,8 @@ We want to join the word tokens of a phrase together, by capitalized each termâ€
 &lt;p&gt;The information is shown when the user hover over this &lt;strong&gt;question mark&lt;/strong&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;end-goal&quot;&gt;End Goal&lt;/h3&gt;
-&lt;iframe width=&quot;500&quot; height=&quot;300&quot; src=&quot;//nshimiye.com/tutorial-ember-cli-1.13.14/#/search&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
-
+&lt;iframe width=&quot;700&quot; height=&quot;100&quot; src=&quot;//nshimiye.com/tutorial-ember-cli-1.13.14/#/search&quot;&gt;&lt;/iframe&gt;
+&lt;!-- frameborder=&quot;0&quot; --&gt;
 &lt;h3 id=&quot;step-by-step&quot;&gt;Step by step&lt;/h3&gt;
 
 &lt;ul&gt;
